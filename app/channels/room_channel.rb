@@ -13,7 +13,7 @@ class RoomChannel < ApplicationCable::Channel
     
   
   def post_location(location)
-    if Location.create(latitude: location['latitude'], longtitude: location['longitude']) then
+    if Location.create(latitude: location['location']['latitude'], longitude: location['location']['longitude']) then
       ActionCable.server.broadcast 'location'
     else
       Rails.logger.error "失敗"

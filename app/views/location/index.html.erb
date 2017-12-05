@@ -5,3 +5,13 @@
   <div class="div-geolocation-header">経度</div>
   <div id="longitude">-</div>
 </div>
+
+<div class='locations'>
+  <% @locations.each do |location| %>
+    <div class="location">
+      <p><%= location.created_at %></p>
+      <p><%= location.latitude %></p>
+      <p><%= location.longitude %></p>
+    </div>
+  <% end %>
+</div>  
