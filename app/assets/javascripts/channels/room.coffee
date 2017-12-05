@@ -5,8 +5,8 @@ App.room = App.cable.subscriptions.create "RoomChannel",
   disconnected: ->
     # Called when the subscription has been terminated by the server
 
-  received: (data) ->
+  received: ->
     # Called when there's incoming data on the websocket for this channel
-　　データベースに保存されていなくてもここで表示dom作成できる、ビューに反映させる
-  post_location: ->
-    @perform 'post_location'
+　　# データベースに保存されていなくてもここで表示dom作成できる、ビューに反映させる
+  post_location:(location)->
+    @perform	'post_message',	location:	location

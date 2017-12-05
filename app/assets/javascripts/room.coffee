@@ -1,6 +1,0 @@
-ここにイベントリスナを追加する
-
-おそらく位置情報のやつも
-
-addeventlistnerを使って
-App.room.post_locationを呼び出す
