@@ -10,4 +10,3 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 　　
   post_location: (location)->
     @perform 'post_location', location: location
-    
