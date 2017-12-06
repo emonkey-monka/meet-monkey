@@ -39,3 +39,4 @@
     document.getElementById('result').innerHTML = errorMessage
 
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
+  
