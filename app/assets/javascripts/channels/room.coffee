@@ -9,5 +9,5 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     # Called when there's incoming data on the websocket for this channel
 　　
   post_location: (location)->
-    @perform 'post_location', location:	location
+    @perform 'post_location', location: location
     
