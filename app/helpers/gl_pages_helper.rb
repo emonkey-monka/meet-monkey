@@ -1,0 +1,2 @@
+module GlPagesHelper
+end
