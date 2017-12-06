@@ -5,12 +5,20 @@
     # 位置情報が渡ってくる
     data = position.coords
     # データの整理
+    
     lat = data.latitude
     document.getElementById('lat').innerHTML = lat
     lng = data.longitude
     document.getElementById('lng').innerHTML = lng
     accLatlng = data.accuracy
     document.getElementById('accLatlng').innerHTML = accLatlng
+    
+    location = {
+        latitude:  lat
+        longitude:  lng
+    }
+    
+    App.room.post_location(location)
 
   errorCallback = (errors) ->
     # エラー処理
@@ -22,7 +30,7 @@
       "位置情報の取得に時間がかかり過ぎてタイムアウトしました。"
     ]
     # エラー番号
-    errorNo = errors.code
+    errorNo = error.code
     # エラーメッセージ
     errorMessage = "[エラー番号: " + errorNo + "]\n" + errorInfo[errorNo]
     # アラート表示
