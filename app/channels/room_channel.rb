@@ -13,7 +13,7 @@ class RoomChannel < ApplicationCable::Channel
     
   
   def post_location(location)
-    if GlPage.create(latitude: location['location']['latitude'], longitude: location['location']['longitude']) then
+    if GlPage.create(latitude: location['location']['latitude'], longitude: location['location']['longitude'], ipaddress: request.remote_ip) then
       ActionCable.server.broadcast 'location', location: location['location']
     else
       Rails.logger.error "失敗"
