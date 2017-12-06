@@ -14,7 +14,7 @@ class RoomChannel < ApplicationCable::Channel
   
   def post_location(location)
     if GlPage.create(latitude: location['location']['latitude'], longitude: location['location']['longitude']) then
-      ActionCable.server.broadcast 'location'
+      ActionCable.server.broadcast 'location', location: location['location']
     else
       Rails.logger.error "失敗"
     end
