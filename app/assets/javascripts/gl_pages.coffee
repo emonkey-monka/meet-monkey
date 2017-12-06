@@ -22,7 +22,7 @@
       "位置情報の取得に時間がかかり過ぎてタイムアウトしました。"
     ]
     # エラー番号
-    errorNo = error.code
+    errorNo = errors.code
     # エラーメッセージ
     errorMessage = "[エラー番号: " + errorNo + "]\n" + errorInfo[errorNo]
     # アラート表示
