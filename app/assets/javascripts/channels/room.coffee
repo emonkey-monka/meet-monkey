@@ -5,7 +5,11 @@ App.room = App.cable.subscriptions.create "RoomChannel",
   disconnected: ->
     # Called when the subscription has been terminated by the server
 
-  received: ->
+  received: (location)->
+    element = document.createElement('div')		
+    element.className = 'location'		
+    element.innerHTML = "<p>#{location.location.latitude} #{location.location.longitude} </p>"		
+    document.getElementById('locations').appendChild(element)
     # Called when there's incoming data on the websocket for this channel
 　　
   post_location: (location)->
