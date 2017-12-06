@@ -1,0 +1,2 @@
+class GlPage < ApplicationRecord
+end

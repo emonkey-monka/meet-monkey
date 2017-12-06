@@ -5,12 +5,20 @@
     # 位置情報が渡ってくる
     data = position.coords
     # データの整理
+    
     lat = data.latitude
     document.getElementById('lat').innerHTML = lat
     lng = data.longitude
     document.getElementById('lng').innerHTML = lng
     accLatlng = data.accuracy
     document.getElementById('accLatlng').innerHTML = accLatlng
+    
+    location = {
+        latitude:  lat
+        longitude:  lng
+    }
+    
+    App.room.post_location(location)
 
   errorCallback = (errors) ->
     # エラー処理

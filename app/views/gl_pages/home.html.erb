@@ -14,3 +14,13 @@
   <dd id="accLatlng">&nbsp;</dd>
 </dl>
 <dl id="result"></dl>
+
+<div class='locations'>
+  <% @locations.each do |location| %>
+    <div class='location'>
+      <p><%= location.updated_at %> </p>
+      <p><%= location.latitude %> </p>
+      <p><%= location.longitude %> </p>
+    </div>
+  <% end %>
+</div>
