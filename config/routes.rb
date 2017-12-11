@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'gl_pages/home'
 
   root 'gl_pages#home'

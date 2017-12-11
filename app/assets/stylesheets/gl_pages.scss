@@ -62,12 +62,28 @@ body{
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
 }
 
-#owninfo > h3{
+#owninfo .owninfo-top{
   font-size:3vw;
   width:100%;
   background:#333333;
   color:#ffffff;
   padding:1vw;
+  box-sizing:border-box;
+}
+
+#owninfo .owninfo-top h3,
+#owninfo .owninfo-top p{
+  float:left;
+  width:50%;
+}
+
+#owninfo .owninfo-top p{
+  text-align:right;
+}
+
+#owninfo .owninfo-top p a{
+  color:#ffffff;
+  text-decoration:none;
 }
 
 #owninfo{
