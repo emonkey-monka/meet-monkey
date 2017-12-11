@@ -8,7 +8,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
   received: (users)->
     for user in users
       console.log(user)
-      element = document.createElement('tr')		
+      element = document.createElement('tr')
       element.className = 'location-member'
       element.innerHTML = "<td>#{user.latitude}</td><td>#{user.longitude}</td><td>#{user.distance}</td>"
       document.getElementById('locations').appendChild(element)
