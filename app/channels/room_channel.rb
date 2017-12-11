@@ -13,10 +13,10 @@ class RoomChannel < ApplicationCable::Channel
     
   
   def post_location(location)
-  
-    if GlPage.create(latitude: location['location']['latitude'], longitude: location['location']['longitude']) then
+    location = location['location']
+    if GlPage.create(latitude: location['latitude'], longitude: location['longitude']) then
       #他ユーザーの情報を取得
-      users = GlPage.pldist(location['location']['latitude'], location['location']['longitude'])
+      users = GlPage.pldist(location['latitude'], location['longitude'])
       users_hash = users.map do |user|
         {
           latitude: user.latitude,
