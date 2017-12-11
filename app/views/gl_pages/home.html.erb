@@ -1,6 +1,9 @@
 <div id="main_view">
   <div id="owninfo">
-    <h3>あなたの情報</h3>
+    <div class='cf owninfo-top'>
+      <h3>あなたの情報</h3>
+      <p><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></p>
+    </div>
     <div class="owninfo-left">
       <dl class="owninfo-name">
         <dt>なまえ</dt>
