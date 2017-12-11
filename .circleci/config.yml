@@ -47,7 +47,7 @@ jobs:
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
             echo '--format progress' > .rspec
-            echo '--fromat RspecJunitFormatter' >> .rspec
+            echo '--format RspecJunitFormatter' >> .rspec
             echo '--out /tmp/test-results/rspec.xml' >> .rspec
             echo '--format progress' >> .rspec
             
