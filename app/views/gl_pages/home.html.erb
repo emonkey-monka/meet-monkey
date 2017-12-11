@@ -1,19 +1,39 @@
-<h1>Meet-Monkey</h1>
-
-<hr>
-
-<h3>あなたの情報</h3>
-<dl id="owninfo">
-  <dt>IPアドレス</dt>
-  <dd id="ipaddr">&nbsp;<%= request.remote_ip %></dd>
-  <dt>緯度</dt>
-  <dd id="lat">&nbsp;</dd>
-  <dt>経度</dt>
-  <dd id="lng">&nbsp;</dd>
-  <dt>誤差(m)</dt>
-  <dd id="accLatlng">&nbsp;</dd>
-</dl>
-<dl id="result"></dl>
-
-<div id='locations'>
+<div id="main_view">
+  <div id="owninfo">
+    <h3>あなたの情報</h3>
+    <div class="owninfo-left">
+      <dl class="owninfo-name">
+        <dt>なまえ</dt>
+        <dd id="ipaddr">テスト太郎</dd>
+      </dl>
+      <dl class="owninfo-ip">
+        <dt>IPアドレス</dt>
+        <dd id="ipaddr"><%= request.remote_ip %></dd>
+      </dl>
+    </div>
+    <div class="owninfo-right">
+      <dl class="owninfo-latlng">
+        <dt>緯度</dt>
+        <dd id="lat"></dd>
+        <dt>経度</dt>
+        <dd id="lng"></dd>
+      </dl>
+      <dl class="owninfo-gosa">
+        <dt>誤差(m)</dt>
+        <dd id="accLatlng"></dd>
+      </dl>
+    </div>
+  </div>
+  <dl id="result"></dl>
+  
+  <div id='locations-outer'>
+    <table id='locations'>
+      <tr class="locations-title cf">
+        <th>なまえ</th>
+        <th>緯度</th>
+        <th>経度</th>
+        <th>あなたとの距離</th>
+      </tr>
+    </table>
+  </div>
 </div>
