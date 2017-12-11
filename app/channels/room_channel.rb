@@ -15,7 +15,17 @@ class RoomChannel < ApplicationCable::Channel
   def post_location(location)
   
     if GlPage.create(latitude: location['location']['latitude'], longitude: location['location']['longitude']) then
-      ActionCable.server.broadcast 'location', location: location['location']
+      #他ユーザーの情報を取得
+      users = GlPage.pldist(location['location']['latitude'], location['location']['longitude'])
+      users_hash = users.map do |user|
+        {
+          latitude: user.latitude,
+          longitude: user.longitude,
+          distance: user.distance
+        }
+      end
+      #取得した情報をクライアントへ伝送
+      ActionCable.server.broadcast 'location', users_hash
     else
       Rails.logger.error "失敗"
     end
