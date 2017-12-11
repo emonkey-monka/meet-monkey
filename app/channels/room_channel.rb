@@ -17,6 +17,7 @@ class RoomChannel < ApplicationCable::Channel
     if GlPage.create(latitude: location['latitude'], longitude: location['longitude']) then
       #他ユーザーの情報を取得
       users = GlPage.pldist(location['latitude'], location['longitude'])
+      users.sort_by!(&:distance)
       users_hash = users.map do |user|
         {
           latitude: user.latitude,
