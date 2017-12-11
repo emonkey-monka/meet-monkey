@@ -5,7 +5,7 @@ class GlPage < ApplicationRecord
   def self.pldist(lat,lng)
     users = all.map{|glpage| glpage.calc_distance(lat, lng)}
     users.sort_by!(&:distance)
-    users_hash = users.map! do |user|
+    users.map! do |user|
       {
         latitude: user.latitude,
         longitude: user.longitude,
