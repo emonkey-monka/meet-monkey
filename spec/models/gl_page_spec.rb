@@ -6,7 +6,7 @@ RSpec.describe GlPage, type: :model do
     let(:latitude) { 15 }
     let(:longitude) { 15 }
 
-    before { GlPage.calc_distance }
+    before { glpage.calc_distance(latitude, longitude) }
     subject(:distance) { glpage.distance }
     it { expect(distance).to eq 2347.7927573803795 }
   end 
