@@ -3,7 +3,15 @@ class GlPage < ApplicationRecord
   attr_accessor :distance
   
   def self.pldist(lat,lng)
-    all.map{|glpage| glpage.calc_distance(lat, lng)}
+    users = all.map{|glpage| glpage.calc_distance(lat, lng)}
+    users.sort_by!(&:distance)
+    users.map! do |user|
+      {
+        latitude: user.latitude,
+        longitude: user.longitude,
+        distance: user.distance
+      }
+    end
   end
   
   def calc_distance(lat1, lng1)
