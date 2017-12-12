@@ -1,4 +1,4 @@
-require	'csv'
+require 'csv'
 class UploadForm
   include ActiveModel::Model	
   attr_accessor :file
@@ -22,8 +22,8 @@ private
   end
       
   def save
-    return false unless	valid?		
-    open(filename, "w")	do |f|
+    return false unless valid?		
+    open(filename, "w") do |f|
     f.write file.read
     end		
     true

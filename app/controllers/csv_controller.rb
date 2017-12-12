@@ -1,12 +1,12 @@
-class	CsvController	<	ApplicationController
-  def	index
+class	CsvController < ApplicationController
+  def index
     @upload_form = UploadForm.new
   end
         
-  def	upload
+  def upload
     @upload_form = UploadForm.new(upload_form_params)
     if @upload_form.import
-    redirect_to	upload_path, notice:	'インポートしました。'
+    redirect_to upload_path, notice: 'インポートしました。'
     else
     render :index
     end
