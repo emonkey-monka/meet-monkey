@@ -6,13 +6,13 @@ class	CsvController < ApplicationController
   def upload
     @upload_form = UploadForm.new(upload_form_params)
     if @upload_form.import
-    redirect_to upload_path, notice: 'インポートしました。'
+      redirect_to upload_path, notice: 'インポートしました。'
     else
-    render :index
+      render :index
     end
   end
         
-  def	upload_form_params
-   params.fetch(:upload_form,	{}).permit(:file)
+  def upload_form_params
+    params.fetch(:upload_form, {}).permit(:file)
   end
 end
