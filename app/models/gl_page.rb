@@ -7,6 +7,7 @@ class GlPage < ApplicationRecord
     users.sort_by!(&:distance)
     users.map! do |user|
       {
+        username: user.username,
         latitude: user.latitude,
         longitude: user.longitude,
         distance: user.distance

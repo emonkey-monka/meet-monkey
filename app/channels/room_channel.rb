@@ -14,7 +14,7 @@ class RoomChannel < ApplicationCable::Channel
   
   def post_location(location)
     location = location['location']
-    if GlPage.create(latitude: location['latitude'], longitude: location['longitude']) then
+    if GlPage.create(latitude: location['latitude'], longitude: location['longitude'], username: location['username']) then
       #他ユーザーの情報を取得
       users_hash = GlPage.pldist(location['latitude'], location['longitude'])
       #取得した情報をクライアントへ伝送
