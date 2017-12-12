@@ -8,7 +8,7 @@ class UploadForm
   FILE_DIR = "#{Rails.root}/tmp"
    
  def import
-   return false unless	save	
+   return false unless save	
    CSV.read(filename).each do |row|
    Spot.create(name: row[0], latitude: row[1],longitude: row[2] )
    end	
