@@ -13,7 +13,7 @@
     accLatlng = data.accuracy
     document.getElementById('accLatlng').innerHTML = accLatlng
     
-    username = document.getElementById('ipaddr').innerText
+    username = document.getElementById('user-name').innerText
     
     location = {
         latitude:  lat

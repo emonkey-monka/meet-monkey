@@ -7,10 +7,12 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 
   received: (users)->
     for user in users
-      console.log(user)
       element = document.createElement('tr')
       element.className = 'location-member'
-      element.innerHTML = "<td>#{user.username}</td><td>#{user.latitude}</td><td>#{user.longitude}</td><td>#{user.distance}</td>"
+      html_in = "<td>#{user.username}</td>"
+      html_in = html_in + "<td>#{user.latitude}</td>"
+      html_in = html_in + "<td>#{user.longitude}</td>"
+      element.innerHTML = html_in + "<td>#{user.distance}</td>"
       document.getElementById('locations').appendChild(element)
     # Called when there's incoming data on the websocket for this channel
 
