@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212010939) do
+ActiveRecord::Schema.define(version: 20171212012256) do
 
   create_table "gl_pages", force: :cascade do |t|
     t.decimal "latitude", precision: 9, scale: 6
