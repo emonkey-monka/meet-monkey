@@ -7,8 +7,6 @@ class User < ApplicationRecord
   attr_accessor :distance
 
   def self.pldist(userid,lat,lng)
-    #users = all.map{|glpage| glpage.calc_distance(lat, lng)}
-    #自分以外を取得
     users = where.not(id: userid).map{|glpage| glpage.calc_distance(lat, lng)}
     users.sort_by!(&:distance)
     users.map! do |user|
