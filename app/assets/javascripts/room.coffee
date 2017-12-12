@@ -13,12 +13,14 @@
     accLatlng = data.accuracy
     document.getElementById('accLatlng').innerHTML = accLatlng
     
+    userid = document.getElementById('user-id').value
     username = document.getElementById('user-name').innerText
     
     location = {
-        latitude:  lat
-        longitude:  lng
-        username: username
+      latitude: lat
+      longitude: lng
+      userid: userid
+      username: username
     }
     
     App.room.post_location(location)

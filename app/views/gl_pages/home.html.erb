@@ -5,6 +5,7 @@
       <p><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></p>
     </div>
     <div class="owninfo-left">
+      <input type="hidden" id="user-id" value="<%= current_user.id %>">
       <dl class="owninfo-name">
         <dt>なまえ</dt>
         <dd id="user-name"><%= current_user.username %></dd>
